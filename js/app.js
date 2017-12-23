@@ -19,9 +19,11 @@ $pdfs.on('click', function(e) {
         // alert the user
         alert('Please check the box to allow PDF downloads.');
     }
-        
-        
-    // else allow the download
 });
 
 $('#links').append($pdfChecked);
+
+$('a').each(function() {
+    const url = $(this).attr('href');
+    $(this).parent().append(`(${url})`);
+});
